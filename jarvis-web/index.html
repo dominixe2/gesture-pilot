@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080d18">
+  <title>J.A.R.V.I.S. | Personal Assistant</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <div class="brand"><span class="status-dot"></span><div><strong>J.A.R.V.I.S.</strong><small>PERSONAL ASSISTANT · LOCAL PROTOTYPE</small></div></div>
+      <span id="state" class="state">PŘIPRAVEN</span>
+    </header>
+    <section class="reactor-wrap" aria-label="JARVIS status">
+      <div class="reactor"><div class="reactor-core"></div></div>
+      <p>ČÍM VÁM MOHU POMOCI?</p>
+    </section>
+    <section class="chat" aria-live="polite" id="chat">
+      <div class="message assistant"><b>JARVIS</b><p>Systémy připraveny. Můžeš mi napsat zprávu nebo použít hlas. Zatím umím chatovat přes Gemini, mluvit česky a otevírat vybrané weby.</p></div>
+    </section>
+    <form id="composer">
+      <textarea id="prompt" rows="2" placeholder="Napiš JARVISovi…" aria-label="Zpráva pro JARVISe"></textarea>
+      <div class="actions">
+        <button id="voice" type="button" class="secondary">🎙 Hlas</button>
+        <button type="submit" class="primary">Odeslat ↗</button>
+      </div>
+    </form>
+    <details class="settings">
+      <summary>Nastavení Gemini</summary>
+      <p>Klíč se používá pouze v tomto lokálním prototypu v prohlížeči. Nevkládej ho do veřejného repozitáře ani nenasazuj tuto stránku veřejně s klíčem.</p>
+      <label for="apiKey">Gemini API klíč</label>
+      <input id="apiKey" type="password" autocomplete="off" placeholder="Vlož svůj klíč">
+      <button id="saveKey" class="secondary" type="button">Použít klíč</button>
+      <small id="keyStatus">Klíč není uložen.</small>
+    </details>
+    <footer>Prototyp · Hlas závisí na podpoře prohlížeče a hlasech ve Windows.</footer>
+  </main>
+  <script src="./app.js"></script>
+</body>
+</html>
